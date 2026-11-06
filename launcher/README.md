@@ -1,6 +1,6 @@
-# Gulaschfritteuse Launcher
+# Goulo Launcher
 
-Launcher für den Gulaschfritteuse-Client, in reinem Java (Swing), **ohne externe Bibliotheken**.
+Launcher für den Goulo Client, in reinem Java (Swing), **ohne externe Bibliotheken**.
 
 ## Was er macht
 
@@ -14,15 +14,15 @@ Launcher für den Gulaschfritteuse-Client, in reinem Java (Swing), **ohne extern
 5. **Client-Mod:** kopiert die Client-Mod vor jedem Start in den mods-Ordner des Profils.
 6. **Starten:** startet Minecraft mit Fabric. Die Ausgabe des Spiels landet im Bereich „Konsole“.
 
-Spieldaten liegen in `%APPDATA%\.gulaschfritteuse` (die normale `.minecraft` bleibt unberührt).
+Spieldaten liegen in `%APPDATA%\.goulo` (die normale `.minecraft` bleibt unberührt).
 
 ## Installieren
 
 Voraussetzung: **JDK 21 oder neuer** unter Windows.
 
 Doppelklick auf **`install.bat`**. Das Skript baut mit `jpackage` eine Windows-App
-(`Gulaschfritteuse.exe` mit eigenem Java) nach `%USERPROFILE%\Apps\Gulaschfritteuse`
-und legt einen Startmenü-Eintrag an. Danach in der Windows-Suche nach „Gulaschfritteuse“ suchen.
+(`Goulo.exe` mit eigenem Java) nach `%USERPROFILE%\Apps\Goulo`
+und legt einen Startmenü-Eintrag an. Danach in der Windows-Suche nach „Goulo“ suchen.
 
 Zum schnellen Ausprobieren ohne Installieren (Java 22+): `start-launcher.bat`.
 
@@ -35,7 +35,7 @@ Kontotyp „Nur persönliche Microsoft-Konten“, „Öffentliche Clientflows“
 
 Beim Login zeigt der Launcher einen Code. Du gibst ihn im **eigenen Browser** auf microsoft.com/link ein.
 Dein Passwort sieht der Launcher nie. Gespeichert wird nur ein Refresh-Token in
-`%APPDATA%\.gulaschfritteuse\launcher\account.properties` (nicht weitergeben).
+`%APPDATA%\.goulo\launcher\account.properties` (nicht weitergeben).
 
 ## Aufbau
 

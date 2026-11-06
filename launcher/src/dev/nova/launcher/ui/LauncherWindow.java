@@ -207,7 +207,7 @@ public class LauncherWindow extends JFrame implements Listener {
         if (APP_ICON != null) {
             logo.setIcon(new ImageIcon(APP_ICON.getScaledInstance(44, 44, Image.SCALE_SMOOTH)));
         } else {
-            logo.setText("GF");
+            logo.setText("GC");
             logo.setFont(Theme.font(Font.BOLD, 22));
             logo.setForeground(Theme.ACCENT);
         }

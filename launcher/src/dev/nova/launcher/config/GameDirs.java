@@ -4,7 +4,7 @@ import java.nio.file.Path;
 
 /**
  * Eigener Spielordner, getrennt von der normalen .minecraft:
- * Windows: %APPDATA%\.gulaschfritteuse – sonst ~/.gulaschfritteuse
+ * Windows: %APPDATA%\.goulo – sonst ~/.goulo
  */
 public record GameDirs(Path root) {
 
@@ -13,7 +13,17 @@ public record GameDirs(Path root) {
         Path base = appData != null && !appData.isBlank()
                 ? Path.of(appData)
                 : Path.of(System.getProperty("user.home"));
-        return new GameDirs(base.resolve(".gulaschfritteuse"));
+        Path root = base.resolve(".goulo");
+        // Früherer Name: Daten einmalig umziehen, damit Welten, Profile und Login erhalten bleiben.
+        Path old = base.resolve(".gulaschfritteuse");
+        if (!java.nio.file.Files.exists(root) && java.nio.file.Files.isDirectory(old)) {
+            try {
+                java.nio.file.Files.move(old, root);
+            } catch (java.io.IOException e) {
+                return new GameDirs(old); // Umzug ging nicht → alten Ordner weiter benutzen, nichts geht verloren
+            }
+        }
+        return new GameDirs(root);
     }
 
     public Path versions()  { return root.resolve("versions"); }

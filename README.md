@@ -1,4 +1,4 @@
-# Gulaschfritteuse
+# Goulo Client
 
 A small, **private and non-commercial** Minecraft: Java Edition launcher plus a Fabric client mod,
 built for two friends who play together on their own small server ("Gulaschfritteuse").
@@ -22,7 +22,7 @@ It is not distributed publicly and not monetized.
 - **Game ownership is required.** If the account has no Minecraft: Java Edition profile, the launcher refuses
   to start the game. There is **no offline / cracked mode**.
 - The Minecraft access token is kept in memory only. The Microsoft refresh token is stored locally on the
-  user's own PC (`%APPDATA%\.gulaschfritteuse\launcher\account.properties`) so the user does not have to sign in
+  user's own PC (`%APPDATA%\.goulo\launcher\account.properties`) so the user does not have to sign in
   on every start. Nothing is sent to any server other than Microsoft/Mojang.
 - No telemetry, no own backend, no third-party services.
 
@@ -44,7 +44,7 @@ The *Skins* page uses the official Minecraft Services endpoints to upload a skin
 ## Building
 
 - **Launcher:** JDK 21+ on Windows. Run `launcher/install.bat`. It builds a Windows app with `jpackage`
-  into `%USERPROFILE%\Apps\Gulaschfritteuse` and adds a Start menu entry.
+  into `%USERPROFILE%\Apps\Goulo` and adds a Start menu entry.
 - **Client mod:** open `client/` in IntelliJ IDEA (Gradle import), then run the Gradle task `build`.
   The jar ends up in `client/build/libs/`. Re-run `launcher/install.bat` afterwards to bundle it.
 

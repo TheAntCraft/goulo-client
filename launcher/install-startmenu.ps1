@@ -1,13 +1,13 @@
-# Baut den Gulaschfritteuse Launcher als echte Windows-App (Gulaschfritteuse.exe, mit eigenem Java)
-# nach %USERPROFILE%\Apps\Gulaschfritteuse und legt Startmenue-Eintraege an.
+# Baut den Goulo Launcher als echte Windows-App (Goulo.exe, mit eigenem Java)
+# nach %USERPROFILE%\Apps\Goulo und legt Startmenue-Eintraege an.
 # Erneut ausfuehren = aktualisieren. Vorher den Launcher schliessen.
 # (Bewusst nicht unter AppData: manche Programme sehen dort nur eine eigene, versteckte Kopie.)
 
 $ErrorActionPreference = 'Stop'
 $src = $PSScriptRoot
 $root = Join-Path $env:USERPROFILE 'Apps'
-$imageDir = Join-Path $root 'Gulaschfritteuse'
-$work = Join-Path $env:TEMP 'gulaschfritteuse-build'
+$imageDir = Join-Path $root 'Goulo'
+$work = Join-Path $env:TEMP 'goulo-build'
 
 # --- JDK finden (echter Ordner, nicht der javapath-Umweg)
 $props = cmd /c "java -XshowSettings:properties -version 2>&1"
@@ -38,7 +38,7 @@ New-Item -ItemType Directory -Force $classes, $inputDir | Out-Null
 $sources = Get-ChildItem (Join-Path $src 'src') -Recurse -Filter *.java | ForEach-Object FullName
 & $javac -encoding UTF-8 -d $classes $sources
 if ($LASTEXITCODE -ne 0) { throw 'Kompilieren fehlgeschlagen.' }
-& $jar --create --file (Join-Path $inputDir 'gulaschfritteuse-launcher.jar') --main-class dev.nova.launcher.Main -C $classes .
+& $jar --create --file (Join-Path $inputDir 'goulo-launcher.jar') --main-class dev.nova.launcher.Main -C $classes .
 if ($LASTEXITCODE -ne 0) { throw 'Jar bauen fehlgeschlagen.' }
 Write-Host 'Launcher gebaut.'
 
@@ -57,9 +57,9 @@ if (Test-Path $png) {
 }
 
 # --- Client-Mod mitnehmen, falls schon gebaut
-$modJar = Join-Path $src '..\client\build\libs\gulaschfritteuse-client-0.1.0.jar'
+$modJar = Join-Path $src '..\client\build\libs\goulo-client-0.1.0.jar'
 if (Test-Path $modJar) {
-    Copy-Item $modJar (Join-Path $inputDir 'gulaschfritteuse-client.jar')
+    Copy-Item $modJar (Join-Path $inputDir 'goulo-client.jar')
     Write-Host 'Client-Mod uebernommen.'
 } else {
     Write-Host 'Hinweis: Client-Mod ist noch nicht gebaut (client -> gradlew build). Danach dieses Skript erneut ausfuehren.'
@@ -71,12 +71,12 @@ New-Item -ItemType Directory -Force $root | Out-Null
 
 # --- Windows-App bauen (enthaelt ein eigenes, verkleinertes Java)
 & $jpackage --type app-image `
-    --name Gulaschfritteuse `
+    --name Goulo `
     --app-version 0.1.0 `
-    --vendor Gulaschfritteuse `
-    --description 'Gulaschfritteuse Launcher' `
+    --vendor Goulo `
+    --description 'Goulo Launcher' `
     --input $inputDir `
-    --main-jar gulaschfritteuse-launcher.jar `
+    --main-jar goulo-launcher.jar `
     --main-class dev.nova.launcher.Main `
     --java-options '-Dfile.encoding=UTF-8' `
     --add-modules 'java.desktop,java.net.http' `
@@ -100,8 +100,8 @@ function New-Shortcut($name, $exe, $description) {
     Write-Host "Startmenue-Eintrag: $name"
 }
 
-New-Shortcut 'Gulaschfritteuse' 'Gulaschfritteuse.exe' 'Gulaschfritteuse Launcher'
+New-Shortcut 'Goulo Client' 'Goulo.exe' 'Goulo Launcher'
 
 Remove-Item $work -Recurse -Force -ErrorAction SilentlyContinue
 Write-Host ''
-Write-Host 'Fertig. In der Windows-Suche nach "Gulaschfritteuse" suchen.'
+Write-Host 'Fertig. In der Windows-Suche nach "Goulo" suchen.'

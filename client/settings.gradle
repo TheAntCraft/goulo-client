@@ -9,4 +9,4 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'gulaschfritteuse-client'
+rootProject.name = 'goulo-client'

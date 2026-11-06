@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
 public class NovaClient implements ClientModInitializer {
 
     public static final String MOD_ID = "novaclient";
-    public static final String NAME = "Gulaschfritteuse";
+    public static final String NAME = "Goulo Client";
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
     private static NovaClient instance;

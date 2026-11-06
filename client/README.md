@@ -1,6 +1,6 @@
-# Gulaschfritteuse Client
+# Goulo Client (Mod)
 
-Client-Mod für die Gulaschfritteuse als **Fabric-Mod** (Minecraft 1.21.4, Java 21).
+Client-Mod für unseren Server Gulaschfritteuse als **Fabric-Mod** (Minecraft 1.21.4, Java 21).
 Nur Komfort- und HUD-Funktionen, keine Cheats. Aktuell das Grundgerüst, auf dem die Module aufbauen.
 
 ## Was schon drin ist

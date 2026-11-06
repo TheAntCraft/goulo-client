@@ -22,7 +22,7 @@ public final class Http {
             .connectTimeout(Duration.ofSeconds(20))
             .build();
 
-    private static final String USER_AGENT = "GulaschfritteuseLauncher/" + Main.VERSION;
+    private static final String USER_AGENT = "GouloLauncher/" + Main.VERSION;
 
     public record Response(int status, String body) {
         public boolean ok() {
@@ -75,7 +75,7 @@ public final class Http {
     /** multipart/form-data mit Textfeldern und einer PNG-Datei. */
     public static Response postMultipartWithBearer(String url, String token, Map<String, String> fields,
                                                    String fileField, Path file) throws IOException {
-        String boundary = "----GulaschBoundary" + System.nanoTime();
+        String boundary = "----GouloBoundary" + System.nanoTime();
         java.io.ByteArrayOutputStream body = new java.io.ByteArrayOutputStream();
         for (Map.Entry<String, String> e : fields.entrySet()) {
             body.writeBytes(("--" + boundary + "\r\nContent-Disposition: form-data; name=\"" + e.getKey()

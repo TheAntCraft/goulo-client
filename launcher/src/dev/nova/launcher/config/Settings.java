@@ -23,10 +23,10 @@ public class Settings {
 
     /** Installiert: Mod liegt neben dem Launcher. Entwicklung: frisch gebaute Mod aus ../client. */
     private static String defaultModJar() {
-        Path installed = dev.nova.launcher.Main.appDir().resolve("gulaschfritteuse-client.jar");
+        Path installed = dev.nova.launcher.Main.appDir().resolve("goulo-client.jar");
         if (java.nio.file.Files.isRegularFile(installed)) return installed.toString();
         Path here = Path.of(System.getProperty("user.dir"));
-        return here.resolve("../client/build/libs/gulaschfritteuse-client-0.1.0.jar").normalize().toString();
+        return here.resolve("../client/build/libs/goulo-client-0.1.0.jar").normalize().toString();
     }
 
     public Settings(GameDirs dirs) {

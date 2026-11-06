@@ -190,7 +190,7 @@ public class Installer {
     }
 
     private void copyClientMod(Path modsDir) throws IOException {
-        Path target = modsDir.resolve("gulaschfritteuse-client.jar");
+        Path target = modsDir.resolve("goulo-client.jar");
         if (settings.modJar.isBlank()) return;
         Path source = Path.of(settings.modJar);
         if (Files.isRegularFile(source)) {

@@ -5,11 +5,11 @@ import dev.nova.launcher.ui.Theme;
 
 import javax.swing.SwingUtilities;
 
-/** Startpunkt des Gulaschfritteuse Launchers. */
+/** Startpunkt des Goulo Launchers. */
 public class Main {
 
-    public static final String NAME = "Gulaschfritteuse Launcher";
-    public static final String CLIENT_NAME = "Gulaschfritteuse";
+    public static final String NAME = "Goulo Launcher";
+    public static final String CLIENT_NAME = "Goulo Client";
     public static final String VERSION = "0.1.0";
 
     /** Diese Versionen installiert der Launcher. Passend zur Client-Mod halten! */

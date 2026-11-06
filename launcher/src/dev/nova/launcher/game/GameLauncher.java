@@ -53,7 +53,7 @@ public class GameLauncher {
         vars.put("natives_directory", spec.nativesDir().toString());
         vars.put("library_directory", dirs.libraries().toString());
         vars.put("classpath_separator", File.pathSeparator);
-        vars.put("launcher_name", "GulaschfritteuseLauncher");
+        vars.put("launcher_name", "GouloLauncher");
         vars.put("launcher_version", Main.VERSION);
         vars.put("classpath", spec.classpath().stream().map(Path::toString)
                 .collect(Collectors.joining(File.pathSeparator)));
