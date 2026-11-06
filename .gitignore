@@ -1,0 +1,19 @@
+# Build-Ausgaben
+build/
+out/
+*.class
+
+# Gradle / Fabric Loom
+.gradle/
+run/
+remappedSrc/
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+
+# Lokale Daten – niemals hochladen
+account.properties
+settings.properties
+*.log
